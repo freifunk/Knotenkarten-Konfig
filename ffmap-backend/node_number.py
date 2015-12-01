@@ -5,7 +5,7 @@ import datetime
 import json
 
 #Datei oeffnen
-f = open('/var/www/nodes_ng_ffhh/nodelist.json')
+f = open('/var/www/meshviewer/nodelist.json')
 
 #JSON einlesen
 data = json.load(f)
