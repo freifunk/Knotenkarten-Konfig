@@ -19,7 +19,7 @@ num_nodes = 0
 #Fuer jeden Knoten in nodes
 for node in nodes:
         #Status Attribut aussortieren
-        status = node['status']  
+        status = node['status']
 
         #Wenn der Status online entaehlt, hochzaehlen
         if status['online']:
@@ -31,7 +31,7 @@ thetime = datetime.datetime.now().isoformat()
 ffhh = None
 
 #Freifunk API-Datei einladen und JSON lesen
-with open('/var/www/meta_ffhh/ffhh.json', 'r') as fp:
+with open('/var/www/meta/ffhh.json', 'r') as fp:
         ffhh = json.load(fp)
 
 #Attribute Zeitstempel und Knotenanzahl setzen
@@ -39,5 +39,5 @@ ffhh['state']['lastchange'] = thetime
 ffhh['state']['nodes'] = num_nodes
 
 #Freifunk API-Datein mit geaenderten werten schreiben
-with open('/var/www/meta_ffhh/ffhh.json', 'w') as fp:
+with open('/var/www/meta/ffhh.json', 'w') as fp:
         json.dump(ffhh, fp, indent=2, separators=(',', ': '))
