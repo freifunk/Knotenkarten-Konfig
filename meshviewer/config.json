@@ -1,9 +1,12 @@
 {
-  "dataPath": "./",
+  "dataPaths": [
+    "./"
+  ],
   "siteName": "Freifunk Hamburg",
   "mapSigmaScale": 0.54,
   "showContact": false,
   "maxAge": 14,
+  "blinkingHours": 0,
   "mapLayers": [
     { "name": "MapQuest (OSM)",
       "url": "https://otile{s}-s.mqcdn.com/tiles/1.0.0/osm/{z}/{x}/{y}.jpg",
