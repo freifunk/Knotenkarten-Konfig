@@ -5,7 +5,7 @@
   "siteName": "Freifunk Hamburg",
   "mapSigmaScale": 0.54,
   "showContact": false,
-  "maxAge": 14,
+  "maxAge": 30,
   "blinkingHours": 0,
   "mapLayers": [
     { "name": "MapQuest (OSM)",
@@ -60,11 +60,18 @@
      }
     }
   ],
+  "nodeInfos": [
+    { "name": "Clientstatistik",
+      "href": "https://statistik.hamburg.freifunk.net/dashboard/db/freifunk-knoteninfo-knoten-id?var-region=ffhh&var-knoten={NODE_ID}",
+      "thumbnail": "https://statistik.hamburg.freifunk.net/render/dashboard-solo/db/freifunk-knoteninfo-knoten-id?panelId=1&fullscreen&var-region=ffhh&var-knoten={NODE_ID}&theme=light&width=530&height=332&from=now-3d",
+      "caption": "Verbundene Clients in den letzten 3 Tage an Knoten {NODE_ID}"
+    }
+  ],
   "globalInfos": [
     { "name": "Clientstatistik (gesamt)",
-      "href": "http://statistik.hamburg.freifunk.net/dashboard/db/freifunk-ubersicht?var-region=ffhh",
-      "thumbnail": "http://statistik.hamburg.freifunk.net/render/dashboard-solo/db/freifunk-ubersicht?panelId=5&fullscreen&var-region=ffhh&theme=light&width=530&height=332&from=now-24h",
-      "caption": "Verbundene Clients in den letzten 24 Stunden"
+      "href": "https://statistik.hamburg.freifunk.net/dashboard/db/freifunk-ubersicht?var-region=ffhh",
+      "thumbnail": "https://statistik.hamburg.freifunk.net/render/dashboard-solo/db/freifunk-ubersicht?panelId=5&fullscreen&var-region=ffhh&theme=light&width=530&height=332&from=now-3d",
+      "caption": "Verbundene Clients in den letzten 3 Tagen"
     }
   ],
   "siteNames": [
