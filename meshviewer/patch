@@ -1,0 +1,48 @@
+diff --git a/lib/infobox/node.js b/lib/infobox/node.js
+index 664c9da..4d4f458 100644
+--- a/lib/infobox/node.js
++++ b/lib/infobox/node.js
+@@ -35,8 +35,7 @@ define(["moment", "numeral", "tablesort", "tablesort.numeric"],
+         a.setAttribute("href", "geo:" + latitude + "," + longitude)
+       else
+       {
+-        var markername = d.nodeinfo.hostname.replace(/[^\w-]+/g, "")
+-        a.setAttribute("href", "http://flopp.net/?z=15&m=A:" + latitude + ":" + longitude + ":0:" + markername)
++	a.setAttribute("href", "https://www.openstreetmap.org/?mlat=" + latitude + "&mlon=" + longitude + "&zoom=15")
+         a.setAttribute("target", "_blank")
+       }
+ 
+diff --git a/lib/map.js b/lib/map.js
+index a863891..9bc33f2 100644
+--- a/lib/map.js
++++ b/lib/map.js
+@@ -277,6 +277,8 @@ define(["map/clientlayer", "map/labelslayer",
+ 
+       map = L.map(el, options)
+ 
++      new L.Control.Zoom({ position: "bottomright" }).addTo(map)
++
+       var layers = config.mapLayers.map( function (d) {
+         return {
+           "name": d.name,
+diff --git a/scss/main.scss b/scss/main.scss
+index 81084ac..231cfb4 100644
+--- a/scss/main.scss
++++ b/scss/main.scss
+@@ -5,7 +5,6 @@
+ @import '_leaflet.label';
+ @import '_filters';
+ 
+-$minscreenwidth: 630pt;
+ $sidebarwidth: 420pt;
+ $sidebarwidthsmall: 320pt;
+ $buttondistance: 12pt;
+@@ -368,7 +367,7 @@ table {
+   }
+ }
+ 
+-@media screen and (max-width: $minscreenwidth) {
++@media screen and (max-width: 630pt) {
+   .sidebarhandle {
+     display: none;
+   }
